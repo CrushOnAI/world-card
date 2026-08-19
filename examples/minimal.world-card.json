@@ -1,0 +1,19 @@
+{
+  "spec": "world-card",
+  "spec_version": "1.0",
+  "name": "Lantern Harbor",
+  "description": "A foggy harbor city built around an ancient lighthouse.",
+  "language": "en",
+  "tags": ["fantasy", "harbor", "mystery"],
+  "entries": [
+    {
+      "id": "old-lighthouse",
+      "title": "The Old Lighthouse",
+      "content": "The lighthouse beam reveals magical markings hidden by daylight.",
+      "keywords": ["lighthouse", "harbor", "markings"],
+      "category": "location",
+      "priority": 70,
+      "enabled": true
+    }
+  ]
+}

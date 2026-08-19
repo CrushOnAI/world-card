@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "world-card"
+version = "0.1.0"
+description = "Validation and normalization tools for the World Card format"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "CrushOn.AI"}]
+keywords = ["ai-roleplay", "worldbuilding", "world-card", "json"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12"
+]
+
+[project.urls]
+Homepage = "https://github.com/CrushOnAI/world-card"
+Issues = "https://github.com/CrushOnAI/world-card/issues"
+
+[project.scripts]
+world-card = "world_card.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

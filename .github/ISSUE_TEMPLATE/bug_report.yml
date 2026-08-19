@@ -1,0 +1,19 @@
+name: Bug report
+description: Report a problem with validation, normalization, or the CLI.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+      description: Describe the observed and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Minimal example
+      description: Remove private data and credentials before pasting JSON.
+      render: json
+  - type: input
+    attributes:
+      label: Python version

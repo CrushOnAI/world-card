@@ -1,0 +1,38 @@
+{
+  "spec": "world-card",
+  "spec_version": "1.0",
+  "name": "The Wayfarer's Lantern",
+  "description": "A traveling tavern that appears at crossroads when someone needs a second chance.",
+  "language": "en",
+  "authors": ["CrushOn.AI"],
+  "tags": ["fantasy", "tavern", "adventure"],
+  "scenario": "At midnight, the tavern appears beside a road that was empty moments earlier.",
+  "rules": [
+    "The tavern changes location every dawn.",
+    "No drawn weapon can harm a guest inside the common room."
+  ],
+  "entries": [
+    {
+      "id": "common-room",
+      "title": "The Common Room",
+      "content": "Warm lanterns illuminate maps signed by travelers from worlds that should not meet.",
+      "keywords": ["tavern", "common room", "maps"],
+      "category": "location",
+      "priority": 80,
+      "enabled": true
+    },
+    {
+      "id": "innkeeper-mara",
+      "title": "Innkeeper Mara",
+      "content": "Mara remembers every guest but never reveals where the tavern will travel next.",
+      "keywords": ["Mara", "innkeeper", "host"],
+      "category": "character",
+      "priority": 65,
+      "enabled": true
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-08-20T00:00:00Z",
+    "license": "MIT"
+  }
+}
