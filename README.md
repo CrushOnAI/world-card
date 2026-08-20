@@ -13,7 +13,7 @@ World Card is designed to make structured worldbuilding data easier to validate,
 - `examples/` — original, SFW example cards
 - `docs/crushon-normalized-format.md` — tested CrushOn field mapping and privacy notes
 - `src/world_card/` — dependency-free validator, normalizer, and CLI
-- `spaces/world-card-converter/` — deployment package for the Gradio web converter
+- `spaces/world-card-converter/` — deployment package for the static web converter
 - `tests/` — automated tests
 
 ## Quick start
@@ -46,6 +46,9 @@ the visitor's browser and defaults to `Private` visibility and `Filtered` rating
 
 The Space description includes the verified compatibility limits and privacy guidance.
 It does not describe the generated file as an official native CrushOn export.
+
+See the [conversion walkthrough](docs/conversion-example.md) for a compact input,
+mapping, and output example.
 
 ## Minimal card
 
@@ -99,6 +102,13 @@ Important limits:
 - Add fixtures for edge cases and larger worlds
 - Publish and collect feedback on the browser-based converter
 - Extend tested mappings to more note types and edge cases
+
+## Community discussion
+
+The repository includes a review-ready
+[SillyTavern Show and tell draft](docs/community/sillytavern-show-and-tell.md). It is
+kept in the repository so compatibility claims, links, and known limits can be reviewed
+before publication.
 
 ## Contributing
 
