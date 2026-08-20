@@ -91,5 +91,64 @@ class WorldCardTests(unittest.TestCase):
         self.assertEqual(item["note_type"], "WORLD_CARD_NOTE_TYPE_ITEMS")
         self.assertEqual(item["trigger_mode"], "WORLD_CARD_TRIGGER_MODE_ALWAYS_ON")
 
+    def test_comprehensive_sillytavern_fixture(self) -> None:
+        lorebook = json.loads(
+            (ROOT / "examples" / "sillytavern-comprehensive.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        card = sillytavern_to_world_card(lorebook, name="Moonlit Harbor Collection")
+
+        # Disabled and empty entries are omitted. Duplicate titles receive stable,
+        # unique IDs instead of making the generated World Card invalid.
+        self.assertEqual(len(card["entries"]), 7)
+        self.assertEqual(
+            [entry["id"] for entry in card["entries"] if entry["title"] == "Twin Gate"],
+            ["twin-gate", "twin-gate-2"],
+        )
+        self.assertNotIn("Disabled Draft", {entry["title"] for entry in card["entries"]})
+        self.assertNotIn("Empty Draft", {entry["title"] for entry in card["entries"]})
+
+        # Both list and comma-separated keys are normalized and deduplicated.
+        by_title = {entry["title"]: entry for entry in card["entries"]}
+        self.assertEqual(by_title["Captain Mira"]["keywords"], ["captain", "mira"])
+        self.assertEqual(
+            by_title["Star Compass"]["keywords"], ["compass", "star compass"]
+        )
+
+        converted = world_card_to_crushon(card)
+        by_type = {note["note_type"]: note for note in converted["notes"]}
+        self.assertTrue({
+            "WORLD_CARD_NOTE_TYPE_CHARACTERS",
+            "WORLD_CARD_NOTE_TYPE_LOCATIONS",
+            "WORLD_CARD_NOTE_TYPE_ORGANIZATIONS",
+            "WORLD_CARD_NOTE_TYPE_EVENTS",
+            "WORLD_CARD_NOTE_TYPE_RULES",
+            "WORLD_CARD_NOTE_TYPE_ITEMS",
+        }.issubset(by_type))
+
+        rule = by_type["WORLD_CARD_NOTE_TYPE_RULES"]["items"][0]
+        self.assertEqual(rule["name"], "Harbor Oath")
+        self.assertEqual(rule["trigger_mode"], "WORLD_CARD_TRIGGER_MODE_ALWAYS_ON")
+        self.assertNotIn("key_words", rule)
+
+    def test_namespaced_optional_character_fields_are_preserved(self) -> None:
+        card = json.loads(
+            (ROOT / "examples" / "character-cast.world-card.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        normalized = normalize_card(card)
+        fields = normalized["entries"][0]["extensions"]["ai.crushon.world-card"]
+        self.assertEqual(fields["age_group"], "adult")
+        self.assertEqual(fields["gender"], "female")
+
+        # Optional extension fields are preserved in World Card but deliberately
+        # not invented in the tested CrushOn normalized mapping.
+        converted = world_card_to_crushon(normalized)
+        character = converted["notes"][0]["items"][0]
+        self.assertNotIn("age_group", character)
+        self.assertNotIn("gender", character)
+
 if __name__ == "__main__":
     unittest.main()
