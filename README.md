@@ -13,6 +13,7 @@ World Card is designed to make structured worldbuilding data easier to validate,
 - `examples/` — original, SFW example cards
 - `docs/crushon-normalized-format.md` — tested CrushOn field mapping and privacy notes
 - `src/world_card/` — dependency-free validator, normalizer, and CLI
+- `spaces/world-card-converter/` — deployment package for the Gradio web converter
 - `tests/` — automated tests
 
 ## Quick start
@@ -34,6 +35,17 @@ You can also run the module without installing it:
 ```bash
 PYTHONPATH=src python -m world_card validate examples/minimal.world-card.json
 ```
+
+## Web converter
+
+Try the public [AI World Card Converter on Hugging Face](https://huggingface.co/spaces/CrushonAI/world-card-converter).
+
+The privacy-first static app in `spaces/world-card-converter/` accepts a SillyTavern
+Lorebook JSON, shows the normalized result, and provides a download. Conversion runs in
+the visitor's browser and defaults to `Private` visibility and `Filtered` rating.
+
+The Space description includes the verified compatibility limits and privacy guidance.
+It does not describe the generated file as an official native CrushOn export.
 
 ## Minimal card
 
@@ -85,7 +97,7 @@ Important limits:
 
 - Collect feedback on the v1 draft
 - Add fixtures for edge cases and larger worlds
-- Publish a browser-based validator and normalizer
+- Publish and collect feedback on the browser-based converter
 - Extend tested mappings to more note types and edge cases
 
 ## Contributing
