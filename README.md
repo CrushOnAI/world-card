@@ -98,6 +98,12 @@ Important limits:
 - Output defaults to `Filtered` and `Private`.
 - Account data, internal IDs, review data, and storage URLs are never generated.
 
+The comprehensive SFW fixtures cover Characters, Locations, Organizations, Events,
+Rules, Items, Always On behavior, disabled and empty entries, duplicate keywords and
+duplicate titles. Optional age-group and gender examples are kept in a namespaced
+World Card `extensions` object; the adapter does not claim these as native third-party
+fields.
+
 ## Roadmap
 
 - Collect feedback on the v1 draft

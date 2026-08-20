@@ -1,0 +1,85 @@
+{
+  "entries": {
+    "0": {
+      "uid": 0,
+      "key": ["captain", "mira", "captain"],
+      "comment": "Captain Mira",
+      "content": "Mira coordinates the harbor watch and protects arriving travelers.",
+      "order": 90,
+      "disable": false,
+      "category": "character"
+    },
+    "1": {
+      "uid": 1,
+      "key": [],
+      "comment": "Harbor Oath",
+      "content": "No vessel may enter the inner harbor without displaying a lantern.",
+      "order": 100,
+      "disable": false,
+      "category": "rule"
+    },
+    "2": {
+      "uid": 2,
+      "key": "compass, star compass, compass",
+      "comment": "Star Compass",
+      "content": "The compass points toward the safest route rather than north.",
+      "order": 40,
+      "disable": false,
+      "category": "item"
+    },
+    "3": {
+      "uid": 3,
+      "key": ["harbor guild", "guild"],
+      "comment": "Harbor Guild",
+      "content": "The guild maintains the docks and publishes the tide schedule.",
+      "order": 60,
+      "disable": false,
+      "category": "organization"
+    },
+    "4": {
+      "uid": 4,
+      "key": ["lantern festival", "festival"],
+      "comment": "Lantern Festival",
+      "content": "Once each season, floating lanterns guide ships safely home.",
+      "order": 75,
+      "disable": false,
+      "category": "event"
+    },
+    "5": {
+      "uid": 5,
+      "key": ["unused"],
+      "comment": "Disabled Draft",
+      "content": "This disabled entry must not be converted.",
+      "order": 50,
+      "disable": true,
+      "category": "rule"
+    },
+    "6": {
+      "uid": 6,
+      "key": ["empty"],
+      "comment": "Empty Draft",
+      "content": "   ",
+      "order": 50,
+      "disable": false,
+      "category": "item"
+    },
+    "7": {
+      "uid": 7,
+      "key": ["twin gate east"],
+      "comment": "Twin Gate",
+      "content": "The eastern gate opens at sunrise.",
+      "order": 50,
+      "disable": false,
+      "category": "location"
+    },
+    "8": {
+      "uid": 8,
+      "key": ["twin gate west"],
+      "comment": "Twin Gate",
+      "content": "The western gate closes at sunset.",
+      "order": 50,
+      "disable": false,
+      "category": "location"
+    }
+  }
+}
