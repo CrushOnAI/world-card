@@ -40,6 +40,8 @@ PYTHONPATH=src python -m world_card validate examples/minimal.world-card.json
 
 Try the public [AI World Card Converter on Hugging Face](https://huggingface.co/spaces/CrushonAI/world-card-converter).
 
+![AI World Card Converter after a successful SFW conversion](docs/assets/world-card-converter-success.png)
+
 The privacy-first static app in `spaces/world-card-converter/` accepts a SillyTavern
 Lorebook JSON, shows the normalized result, and provides a download. Conversion runs in
 the visitor's browser and defaults to `Private` visibility and `Filtered` rating.

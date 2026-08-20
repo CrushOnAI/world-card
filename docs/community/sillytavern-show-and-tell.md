@@ -17,6 +17,7 @@ defaults to Private visibility and Filtered rating.
 - Live converter: https://huggingface.co/spaces/CrushonAI/world-card-converter
 - Repository and specification: https://github.com/CrushOnAI/world-card
 - Conversion example: https://github.com/CrushOnAI/world-card/blob/main/docs/conversion-example.md
+- Converter screenshot: https://github.com/CrushOnAI/world-card/blob/main/docs/assets/world-card-converter-success.png
 
 The adapter currently handles `entries` supplied as an object or array, skips disabled
 or empty entries, and maps Characters, Locations, Organizations, Events, Rules, and
@@ -37,7 +38,8 @@ Feedback would be especially useful on:
 
 - Confirm the live converter is running.
 - Confirm all three links above are public.
-- Attach one current SFW screenshot of the converter after a successful conversion.
+- Attach `docs/assets/world-card-converter-success.png`, captured after a successful
+  conversion of the public SFW lighthouse fixture.
 - Post from an account that can clearly disclose its CrushOn.AI affiliation.
 - Reply to technical feedback without claiming complete compatibility.
 
