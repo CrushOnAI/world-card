@@ -91,6 +91,5 @@ class WorldCardTests(unittest.TestCase):
         self.assertEqual(item["note_type"], "WORLD_CARD_NOTE_TYPE_ITEMS")
         self.assertEqual(item["trigger_mode"], "WORLD_CARD_TRIGGER_MODE_ALWAYS_ON")
 
-
 if __name__ == "__main__":
     unittest.main()
