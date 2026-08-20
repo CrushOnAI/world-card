@@ -11,6 +11,7 @@ World Card is designed to make structured worldbuilding data easier to validate,
 - `spec/world-card-v1.md` — human-readable specification
 - `spec/world-card-v1.schema.json` — machine-readable JSON Schema
 - `examples/` — original, SFW example cards
+- `docs/crushon-normalized-format.md` — tested CrushOn field mapping and privacy notes
 - `src/world_card/` — dependency-free validator, normalizer, and CLI
 - `tests/` — automated tests
 
@@ -22,6 +23,10 @@ Requires Python 3.10 or newer.
 python -m pip install -e .
 world-card validate examples/minimal.world-card.json
 world-card normalize examples/fantasy-tavern.world-card.json --output normalized.json
+world-card convert-sillytavern examples/sillytavern-lighthouse.json \
+  --format crushon --name "Moonlit Harbor" --genre original \
+  --tag mystery --tag magic --default-note-type locations \
+  --output crushon-normalized.json
 ```
 
 You can also run the module without installing it:
@@ -57,12 +62,31 @@ PYTHONPATH=src python -m world_card validate examples/minimal.world-card.json
 4. **Safe by default** — no credentials, private conversations, or user identifiers.
 5. **Honest interoperability** — adapters are documented only after real testing.
 
+## Tested interoperability
+
+The repository includes a deterministic adapter for this path:
+
+`SillyTavern Lorebook → World Card Draft → CrushOn normalized JSON`
+
+CrushOn's importer accepted the SillyTavern `entries` structure used in
+`examples/sillytavern-lighthouse.json`. The normalized CrushOn note model and a
+sanitized fixture are documented in
+[`docs/crushon-normalized-format.md`](docs/crushon-normalized-format.md).
+
+Important limits:
+
+- CrushOn's web interface did not expose native World Card export during testing.
+- Generated CrushOn JSON is a normalized conversion target, not a claimed native export.
+- Lorebook entries without a recognized category require an explicit default note type.
+- Output defaults to `Filtered` and `Private`.
+- Account data, internal IDs, review data, and storage URLs are never generated.
+
 ## Roadmap
 
 - Collect feedback on the v1 draft
 - Add fixtures for edge cases and larger worlds
 - Publish a browser-based validator and normalizer
-- Design adapters for external formats after compatibility testing
+- Extend tested mappings to more note types and edge cases
 
 ## Contributing
 

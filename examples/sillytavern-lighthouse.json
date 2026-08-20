@@ -1,0 +1,17 @@
+{
+  "entries": {
+    "0": {
+      "uid": 0,
+      "key": ["lighthouse", "harbor"],
+      "keysecondary": [],
+      "comment": "The Old Lighthouse",
+      "content": "The lighthouse beam reveals magical markings hidden by daylight.",
+      "constant": false,
+      "selective": false,
+      "order": 70,
+      "position": 0,
+      "disable": false,
+      "category": "location"
+    }
+  }
+}
