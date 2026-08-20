@@ -108,15 +108,16 @@ fields.
 
 - Collect feedback on the v1 draft
 - Add fixtures for edge cases and larger worlds
-- Publish and collect feedback on the browser-based converter
+- Improve validation errors and field-mapping reports in the browser-based converter
 - Extend tested mappings to more note types and edge cases
 
 ## Community discussion
 
-The repository includes a review-ready
-[SillyTavern Show and tell draft](docs/community/sillytavern-show-and-tell.md). It is
-kept in the repository so compatibility claims, links, and known limits can be reviewed
-before publication.
+Join the published
+[SillyTavern Show and tell discussion](https://github.com/SillyTavern/SillyTavern/discussions/5952)
+to share compatibility feedback and sanitized edge cases. The original
+[publication copy and checklist](docs/community/sillytavern-show-and-tell.md) remain in
+the repository as a transparent record of the tested claims and known limits.
 
 ## Contributing
 
