@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Add browser-side conversion statistics and field-mapping reports.
+- Report disabled, empty, and invalid entries separately.
+- Surface fallback categories, duplicate keywords, unsupported source fields, and mapping warnings.
+- Add JSON line and column details when parse positions are available.
+- Add a dependency-free Node test for the static converter.
+
 - Add a tested SillyTavern Lorebook adapter.
 - Add deterministic World Card Draft to CrushOn normalized conversion.
 - Add a sanitized CrushOn structural fixture and mapping documentation.

@@ -37,12 +37,19 @@
       </section>
     </section>
 
+    <section class="notice" aria-labelledby="report-heading">
+      <h2 id="report-heading">3. Validation and field-mapping report</h2>
+      <p>Review skipped entries, fallback categories and fields that are not represented in the normalized output.</p>
+      <pre id="report">A conversion report will appear here.</pre>
+    </section>
+
     <section class="notice">
       <h2>Compatibility and privacy</h2>
       <ul>
         <li>Tested with SillyTavern Lorebooks whose <code>entries</code> field is an object or array.</li>
         <li>Supports Characters, Locations, Organizations, Events, Rules and Items.</li>
-        <li>Disabled or empty entries are skipped; unknown categories use your fallback type.</li>
+        <li>Disabled, empty or invalid entries are reported; unknown categories use your fallback type.</li>
+        <li>Source field names not represented by the tested mapping are listed before download.</li>
         <li>The download is a normalized structural fixture, not an official native CrushOn export.</li>
       </ul>
       <a href="https://github.com/CrushOnAI/world-card" target="_blank" rel="noopener">Documentation and source on GitHub →</a>
