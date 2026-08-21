@@ -1,0 +1,33 @@
+{
+  "name": "Moonlit Harbor — Format Test",
+  "introduction": "A small original SFW fantasy setting created to test portable World Card structure, validation, and conversion.",
+  "rating": "WORLD_CARD_RATING_FILTERED",
+  "visibility": "WORLD_CARD_VISIBILITY_PRIVATE",
+  "tags": {
+    "genre_tag": "original",
+    "content_tags": [
+      "mystery",
+      "adventure",
+      "magic"
+    ]
+  },
+  "notes": [
+    {
+      "note_type": "WORLD_CARD_NOTE_TYPE_LOCATIONS",
+      "items": [
+        {
+          "name": "The Old Lighthouse",
+          "description": "A weathered lighthouse overlooking Moonlit Harbor. Its beam reveals magical markings that are invisible in daylight.",
+          "note_type": "WORLD_CARD_NOTE_TYPE_LOCATIONS",
+          "trigger_mode": "WORLD_CARD_TRIGGER_MODE_KEYWORD",
+          "key_words": [
+            "lighthouse",
+            "harbor",
+            "beacon"
+          ],
+          "priority_level": 1
+        }
+      ]
+    }
+  ]
+}

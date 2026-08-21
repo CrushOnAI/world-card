@@ -1,0 +1,40 @@
+{
+  "spec": "world-card",
+  "spec_version": "1.0",
+  "name": "Moonlit Harbor Cast",
+  "description": "Original SFW character notes demonstrating namespaced optional fields.",
+  "language": "en",
+  "tags": ["character", "harbor", "sfw"],
+  "entries": [
+    {
+      "id": "captain-mira",
+      "title": "Captain Mira",
+      "content": "An adult harbor captain who coordinates rescue patrols.",
+      "keywords": ["captain", "mira", "harbor watch"],
+      "category": "character",
+      "priority": 90,
+      "enabled": true,
+      "extensions": {
+        "ai.crushon.world-card": {
+          "age_group": "adult",
+          "gender": "female"
+        }
+      }
+    },
+    {
+      "id": "navigator-ren",
+      "title": "Navigator Ren",
+      "content": "An adult navigator who charts safe routes through the fog.",
+      "keywords": ["navigator", "ren", "charts"],
+      "category": "character",
+      "priority": 70,
+      "enabled": true,
+      "extensions": {
+        "ai.crushon.world-card": {
+          "age_group": "adult",
+          "gender": "nonbinary"
+        }
+      }
+    }
+  ]
+}

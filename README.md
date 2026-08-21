@@ -11,7 +11,9 @@ World Card is designed to make structured worldbuilding data easier to validate,
 - `spec/world-card-v1.md` — human-readable specification
 - `spec/world-card-v1.schema.json` — machine-readable JSON Schema
 - `examples/` — original, SFW example cards
+- `docs/crushon-normalized-format.md` — tested CrushOn field mapping and privacy notes
 - `src/world_card/` — dependency-free validator, normalizer, and CLI
+- `spaces/world-card-converter/` — deployment package for the static web converter
 - `tests/` — automated tests
 
 ## Quick start
@@ -22,6 +24,10 @@ Requires Python 3.10 or newer.
 python -m pip install -e .
 world-card validate examples/minimal.world-card.json
 world-card normalize examples/fantasy-tavern.world-card.json --output normalized.json
+world-card convert-sillytavern examples/sillytavern-lighthouse.json \
+  --format crushon --name "Moonlit Harbor" --genre original \
+  --tag mystery --tag magic --default-note-type locations \
+  --output crushon-normalized.json
 ```
 
 You can also run the module without installing it:
@@ -29,6 +35,22 @@ You can also run the module without installing it:
 ```bash
 PYTHONPATH=src python -m world_card validate examples/minimal.world-card.json
 ```
+
+## Web converter
+
+Try the public [AI World Card Converter on Hugging Face](https://huggingface.co/spaces/CrushonAI/world-card-converter).
+
+![AI World Card Converter after a successful SFW conversion](docs/assets/world-card-converter-success.png)
+
+The privacy-first static app in `spaces/world-card-converter/` accepts a SillyTavern
+Lorebook JSON, shows the normalized result, and provides a download. Conversion runs in
+the visitor's browser and defaults to `Private` visibility and `Filtered` rating.
+
+The Space description includes the verified compatibility limits and privacy guidance.
+It does not describe the generated file as an official native CrushOn export.
+
+See the [conversion walkthrough](docs/conversion-example.md) for a compact input,
+mapping, and output example.
 
 ## Minimal card
 
@@ -57,12 +79,45 @@ PYTHONPATH=src python -m world_card validate examples/minimal.world-card.json
 4. **Safe by default** — no credentials, private conversations, or user identifiers.
 5. **Honest interoperability** — adapters are documented only after real testing.
 
+## Tested interoperability
+
+The repository includes a deterministic adapter for this path:
+
+`SillyTavern Lorebook → World Card Draft → CrushOn normalized JSON`
+
+CrushOn's importer accepted the SillyTavern `entries` structure used in
+`examples/sillytavern-lighthouse.json`. The normalized CrushOn note model and a
+sanitized fixture are documented in
+[`docs/crushon-normalized-format.md`](docs/crushon-normalized-format.md).
+
+Important limits:
+
+- CrushOn's web interface did not expose native World Card export during testing.
+- Generated CrushOn JSON is a normalized conversion target, not a claimed native export.
+- Lorebook entries without a recognized category require an explicit default note type.
+- Output defaults to `Filtered` and `Private`.
+- Account data, internal IDs, review data, and storage URLs are never generated.
+
+The comprehensive SFW fixtures cover Characters, Locations, Organizations, Events,
+Rules, Items, Always On behavior, disabled and empty entries, duplicate keywords and
+duplicate titles. Optional age-group and gender examples are kept in a namespaced
+World Card `extensions` object; the adapter does not claim these as native third-party
+fields.
+
 ## Roadmap
 
 - Collect feedback on the v1 draft
 - Add fixtures for edge cases and larger worlds
-- Publish a browser-based validator and normalizer
-- Design adapters for external formats after compatibility testing
+- Improve validation errors and field-mapping reports in the browser-based converter
+- Extend tested mappings to more note types and edge cases
+
+## Community discussion
+
+Join the published
+[SillyTavern Show and tell discussion](https://github.com/SillyTavern/SillyTavern/discussions/5952)
+to share compatibility feedback and sanitized edge cases. The original
+[publication copy and checklist](docs/community/sillytavern-show-and-tell.md) remain in
+the repository as a transparent record of the tested claims and known limits.
 
 ## Contributing
 
