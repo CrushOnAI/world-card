@@ -12,6 +12,7 @@ World Card is designed to make structured worldbuilding data easier to validate,
 - `spec/world-card-v1.schema.json` — machine-readable JSON Schema
 - `examples/` — original, SFW example cards
 - `docs/crushon-normalized-format.md` — tested CrushOn field mapping and privacy notes
+- `docs/information-layers-guide.md` — context, memory, summary, and lorebook architecture
 - `src/world_card/` — dependency-free validator, normalizer, and CLI
 - `spaces/world-card-converter/` — deployment package for the static web converter
 - `tests/` — automated tests
@@ -51,6 +52,10 @@ It does not describe the generated file as an official native CrushOn export.
 
 See the [conversion walkthrough](docs/conversion-example.md) for a compact input,
 mapping, and output example.
+
+For a platform-neutral explanation of where world data belongs, read
+[Context, memory, summaries, and lorebooks](docs/information-layers-guide.md). It
+includes a routing table, worked example, and troubleshooting guide.
 
 ## Minimal card
 
