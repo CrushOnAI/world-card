@@ -33,6 +33,10 @@ native import/export compatibility.
 This is a compatibility utility, not an official native CrushOn export. Source format and
 tested limits: [CrushOnAI/world-card](https://github.com/CrushOnAI/world-card).
 
+Not sure what belongs in a lorebook rather than memory or the active chat? Read the
+[information-layers guide](https://github.com/CrushOnAI/world-card/blob/main/docs/information-layers-guide.md)
+for a comparison table, worked example, and troubleshooting checklist.
+
 ## Local test
 
 ```bash
