@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## 0.3.0 — 2026-09-01
+
+- Add three original SFW examples that can be loaded directly in the browser converter.
+- Add a downloadable, versioned JSON conversion report.
+- Publish human-readable and machine-readable compatibility matrices.
+- Report mapped, approximated, skipped, and unsupported source fields observed in each conversion.
+- Correctly map SillyTavern `constant: true` entries to Always On trigger mode.
+- Add regression coverage for the examples, compatibility matrix, report artifact, and constant-entry behavior.
+
+## 0.2.0 — 2026-08-24
+
 - Add browser-side conversion statistics and field-mapping reports.
 - Report disabled, empty, and invalid entries separately.
 - Surface fallback categories, duplicate keywords, unsupported source fields, and mapping warnings.

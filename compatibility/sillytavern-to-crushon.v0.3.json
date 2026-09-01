@@ -1,0 +1,24 @@
+{
+  "matrix_format": "world-card-compatibility-matrix",
+  "matrix_version": "1.0",
+  "converter_version": "0.3.0",
+  "source_format": "SillyTavern Lorebook JSON",
+  "target_format": "CrushOn normalized structural JSON",
+  "compatibility_scope": "Tested converter behavior; not a claim of native or universal compatibility.",
+  "fields": [
+    {"source":"uid","status":"skipped","target":null,"rule":"Source-local sequence identifiers are not exported."},
+    {"source":"comment","status":"approximated","target":"name","rule":"Used as the title when present; falls back to name or Entry N."},
+    {"source":"name","status":"mapped","target":"name","rule":"Used when comment is empty."},
+    {"source":"content","status":"mapped","target":"description","rule":"Trimmed text; empty entries are skipped."},
+    {"source":"key","status":"mapped","target":"key_words","rule":"Strings are split on commas and duplicate values are removed."},
+    {"source":"keysecondary","status":"skipped","target":null,"rule":"Secondary-key logic is not represented by the normalized target."},
+    {"source":"category","status":"approximated","target":"note_type","rule":"Recognized categories are mapped; unknown values use the selected fallback."},
+    {"source":"constant","status":"mapped","target":"trigger_mode","rule":"True becomes Always On; otherwise entries with keys use Keyword."},
+    {"source":"order","status":"approximated","target":"priority_level","rule":"Clamped to levels 1–5 using floor(order / 25) + 1."},
+    {"source":"disable","status":"mapped","target":null,"rule":"Disabled entries are skipped and reported."},
+    {"source":"enabled","status":"mapped","target":null,"rule":"Entries explicitly set to false are skipped and reported."},
+    {"source":"selective","status":"skipped","target":null,"rule":"Selective activation logic is not represented by the normalized target."},
+    {"source":"position","status":"skipped","target":null,"rule":"Prompt insertion position is frontend-specific."},
+    {"source":"extensions","status":"skipped","target":null,"rule":"Unverified source extensions are not copied automatically."}
+  ]
+}

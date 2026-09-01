@@ -26,6 +26,13 @@ Before download, the converter now shows a validation and field-mapping report w
 - source fields that are not represented in the tested output mapping; and
 - warnings for invalid key or order values.
 
+Version 0.3 adds three original SFW examples that can be loaded without uploading a
+file, plus a downloadable JSON conversion report. The report records mapped,
+approximated, skipped, and unsupported source fields and identifies the converter
+version used. See the public
+[compatibility matrix](https://github.com/CrushOnAI/world-card/blob/main/docs/compatibility-matrix.md)
+for the status definitions and tested field behavior.
+
 Malformed JSON errors include a line and column when the browser exposes a parse
 position. The report is explanatory: it does not claim lossless conversion or official
 native import/export compatibility.
