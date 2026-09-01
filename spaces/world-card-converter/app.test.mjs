@@ -3,7 +3,10 @@ import { readFile } from "node:fs/promises";
 
 const source = await readFile(new URL("./app.js", import.meta.url), "utf8");
 const moduleUrl = `data:text/javascript;base64,${Buffer.from(source).toString("base64")}`;
-const { convertLorebook, formatConversionReport, parseJsonWithLocation } = await import(moduleUrl);
+const { CONVERTER_VERSION, FIELD_COMPATIBILITY, SAMPLE_LOREBOOKS, convertLorebook, createReportArtifact, formatConversionReport, parseJsonWithLocation } = await import(moduleUrl);
+
+assert.equal(CONVERTER_VERSION, "0.3.0");
+assert.equal(Object.keys(SAMPLE_LOREBOOKS).length, 3);
 
 {
   const parsed = parseJsonWithLocation('{\n  "entries": []\n}');
@@ -26,6 +29,7 @@ const { convertLorebook, formatConversionReport, parseJsonWithLocation } = await
           content: "The beam reveals hidden markings.",
           key: ["lighthouse", "harbor", "lighthouse"],
           category: "location",
+          constant: true,
           order: 70,
           probability: 100,
         },
@@ -57,6 +61,7 @@ const { convertLorebook, formatConversionReport, parseJsonWithLocation } = await
   ).items[0];
   assert.deepEqual(location.key_words, ["lighthouse", "harbor"]);
   assert.equal(location.priority_level, 3);
+  assert.equal(location.trigger_mode, "WORLD_CARD_TRIGGER_MODE_ALWAYS_ON");
 
   const fallback = converted.result.notes.find(
     (note) => note.note_type === "WORLD_CARD_NOTE_TYPE_ITEMS",
@@ -68,6 +73,20 @@ const { convertLorebook, formatConversionReport, parseJsonWithLocation } = await
   assert.match(report, /Skipped: 3 \(disabled 1, empty 1, invalid 1\)/);
   assert.match(report, /Unsupported source fields: probability/);
   assert.match(report, /custom \(1\)/);
+  assert.deepEqual(converted.report.fieldCoverage.mapped,["constant","content","disable","key"]);
+  assert.deepEqual(converted.report.fieldCoverage.approximated,["category","comment","order"]);
+  assert.deepEqual(converted.report.fieldCoverage.skipped,[]);
+
+  const artifact=createReportArtifact(converted.report,{generatedAt:"2026-09-01T00:00:00.000Z"});
+  assert.equal(artifact.converter_version,"0.3.0");
+  assert.equal(artifact.generated_at,"2026-09-01T00:00:00.000Z");
+  assert.deepEqual(artifact.summary.skipped,{disabled:1,empty:1,invalid:1});
+}
+
+{
+  const matrix=JSON.parse(await readFile(new URL("../../compatibility/sillytavern-to-crushon.v0.3.json",import.meta.url),"utf8"));
+  assert.deepEqual(matrix.fields,FIELD_COMPATIBILITY);
+  for(const sample of Object.values(SAMPLE_LOREBOOKS))assert.ok(convertLorebook(sample.source).count>0);
 }
 
 {

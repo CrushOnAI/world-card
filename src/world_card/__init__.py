@@ -1,6 +1,6 @@
 """World Card validation and normalization toolkit."""
 
-__version__ = "0.1.0"
+__version__ = "0.3.0"
 
 from .normalizer import normalize_card
 from .adapters import sillytavern_to_world_card, world_card_to_crushon

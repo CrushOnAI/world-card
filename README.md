@@ -13,6 +13,8 @@ World Card is designed to make structured worldbuilding data easier to validate,
 - `examples/` — original, SFW example cards
 - `docs/crushon-normalized-format.md` — tested CrushOn field mapping and privacy notes
 - `docs/information-layers-guide.md` — context, memory, summary, and lorebook architecture
+- `docs/compatibility-matrix.md` — human-readable mapped, approximated, and skipped field behavior
+- `compatibility/sillytavern-to-crushon.v0.3.json` — machine-readable compatibility evidence
 - `src/world_card/` — dependency-free validator, normalizer, and CLI
 - `spaces/world-card-converter/` — deployment package for the static web converter
 - `tests/` — automated tests
@@ -44,7 +46,7 @@ Try the public [AI World Card Converter on Hugging Face](https://huggingface.co/
 ![AI World Card Converter after a successful SFW conversion](docs/assets/world-card-converter-success.png)
 
 The privacy-first static app in `spaces/world-card-converter/` accepts a SillyTavern
-Lorebook JSON, shows the normalized result, and provides a download. Conversion runs in
+Lorebook JSON or one of three built-in SFW examples, shows the normalized result, and provides downloads for both the converted file and a versioned conversion report. Conversion runs in
 the visitor's browser and defaults to `Private` visibility and `Filtered` rating.
 
 The Space description includes the verified compatibility limits and privacy guidance.
@@ -52,6 +54,10 @@ It does not describe the generated file as an official native CrushOn export.
 
 See the [conversion walkthrough](docs/conversion-example.md) for a compact input,
 mapping, and output example.
+
+See the [compatibility matrix](docs/compatibility-matrix.md) for mapped, approximated,
+skipped, and unsupported field definitions. The JSON report records the classifications
+observed in each conversion instead of implying lossless compatibility.
 
 For a platform-neutral explanation of where world data belongs, read
 [Context, memory, summaries, and lorebooks](docs/information-layers-guide.md). It
