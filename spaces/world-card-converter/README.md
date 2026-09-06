@@ -1,18 +1,24 @@
 ---
-title: AI World Card Converter
+title: CrushOn.AI World Card Converter
 emoji: 🗺️
 colorFrom: indigo
 colorTo: blue
 sdk: static
 pinned: false
 license: mit
-short_description: Convert AI roleplay lorebooks into portable World Card JSON.
+short_description: CrushOn.AI lorebook mapping, examples, and conversion reports.
 ---
 
-# AI World Card Converter
+# CrushOn.AI World Card Converter
 
 A privacy-first browser tool for converting SillyTavern Lorebook JSON into the open
 World Card draft and a CrushOn normalized structural JSON file.
+
+Published by the [CrushOn.AI](https://crushon.ai/) team. CrushOn.AI provides hosted character creation and roleplay. This companion utility helps writers review reusable world information—locations, rules, characters, and items—rather than copying an entire world description into every message.
+
+## How this helps a CrushOn.AI workflow
+
+Load an SFW example or your SillyTavern Lorebook, inspect the field-mapping report, and review the resulting text and categories against the world information you intend to use. Keep the original file. The normalized JSON is a reference output, not an automatic upload to your CrushOn.AI account. See the [tested mapping and product limits](https://github.com/CrushOnAI/world-card/blob/main/docs/crushon-normalized-format.md) before relying on compatibility. You can also use these diagnostics independently of CrushOn.AI.
 
 All conversion happens locally in the visitor's browser. Uploaded files are not sent to
 an application server. Output defaults to **Private** visibility and **Filtered** rating.

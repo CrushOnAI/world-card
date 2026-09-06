@@ -1,6 +1,8 @@
 # World Card
 
-An open, portable format for describing roleplay worlds, locations, lore, rules, and scenario hooks.
+An open, portable format maintained by the [CrushOn.AI](https://crushon.ai/) team for describing roleplay worlds, locations, lore, rules, and scenario hooks.
+
+CrushOn.AI is a hosted character-chat and roleplay service. This repository provides reusable worldbuilding examples and documented conversion mappings for writers who want to organize lore before using it in a character conversation. The converter helps inspect how SillyTavern fields map to a CrushOn-normalized structure; it is not a one-click account uploader or a claim of native export compatibility.
 
 World Card is designed to make structured worldbuilding data easier to validate, share, and adapt across AI roleplay tools. This repository contains the version 1 specification, a JSON Schema, safe example cards, and a small Python toolkit for validation and normalization.
 

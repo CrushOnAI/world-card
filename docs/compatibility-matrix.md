@@ -2,6 +2,8 @@
 
 This matrix documents the behavior tested by converter version 0.3.0. It is not a claim of lossless, native, or universal compatibility.
 
+Maintained by the [CrushOn.AI](https://crushon.ai/) team to help roleplay authors inspect worldbuilding data before relying on a converted file. Here, “CrushOn” names the documented normalized target for the character-chat service, not a guarantee that this JSON can be uploaded directly into every current product interface.
+
 The machine-readable source is [`compatibility/sillytavern-to-crushon.v0.3.json`](../compatibility/sillytavern-to-crushon.v0.3.json). The browser converter uses the same classifications in its downloadable report.
 
 ## Status definitions
