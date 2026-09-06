@@ -4,6 +4,8 @@ Long AI roleplay becomes easier to maintain when each kind of information has on
 
 This guide describes a platform-neutral information architecture. Exact behavior depends on the application, model, retrieval system, and prompt assembly process.
 
+Published by the [CrushOn.AI](https://crushon.ai/) team. CrushOn.AI offers hosted character creation and roleplay; use this guide to separate stable character instructions, changing scene facts, and reusable world knowledge before a chat. The [World Card conversion example](conversion-example.md) explains the project's documented mapping for world data. These conceptual layers are not a claim that every platform exposes the same memory controls or retains facts across sessions.
+
 ## Quick routing guide
 
 | Layer | Best use | Typical lifetime | Common failure |

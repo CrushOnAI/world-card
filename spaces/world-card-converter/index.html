@@ -4,15 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Convert SillyTavern Lorebook JSON into portable World Card and CrushOn-normalized JSON in your browser.">
-  <title>AI World Card Converter</title>
+  <title>CrushOn.AI World Card Converter</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main>
     <header>
-      <p class="eyebrow">OPEN-SOURCE ROLEPLAY TOOL</p>
-      <h1>AI World Card Converter</h1>
+      <p class="eyebrow">CRUSHON.AI · OPEN-SOURCE ROLEPLAY TOOL</p>
+      <h1>CrushOn.AI World Card Converter</h1>
       <p class="lead">Convert SillyTavern Lorebooks into portable World Card and CrushOn-normalized JSON. Your file stays in this browser.</p>
+      <p>Built by the <a href="https://crushon.ai/" target="_blank" rel="noopener">CrushOn.AI</a> team for roleplay authors who want to organize world knowledge and inspect conversion losses. CrushOn.AI offers hosted character creation and chat; this separate utility prepares reviewable data, not an automatic account upload.</p>
       <div class="badges"><span>Private by default</span><span>Filtered by default</span><span>No server upload</span></div>
     </header>
 
@@ -45,6 +46,11 @@
       <h2 id="report-heading">3. Validation and field-mapping report</h2>
       <p>Review skipped entries, fallback categories and fields that are not represented in the normalized output.</p>
       <pre id="report">A conversion report will appear here.</pre>
+    </section>
+
+    <section class="notice">
+      <h2>Use the result in a CrushOn.AI writing workflow</h2>
+      <p>Start with an example, review the mapped and skipped fields, and check the world facts you intend to use in your <a href="https://crushon.ai/" target="_blank" rel="noopener">CrushOn.AI roleplay</a>. Keep the original source. Do not assume this normalized JSON is a native import file: use the <a href="https://github.com/CrushOnAI/world-card/blob/main/docs/crushon-normalized-format.md" target="_blank" rel="noopener">tested mapping notes</a> to understand the boundaries. World knowledge belongs alongside a concise current-scene summary, not in place of it.</p>
     </section>
 
     <section class="notice">
