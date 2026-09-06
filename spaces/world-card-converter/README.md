@@ -6,7 +6,7 @@ colorTo: blue
 sdk: static
 pinned: false
 license: mit
-short_description: CrushOn.AI lorebook mapping, examples, and conversion reports.
+short_description: CrushOn.AI lorebook mapping and conversion reports
 ---
 
 # CrushOn.AI World Card Converter
